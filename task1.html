@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scientific Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: #f3f4f6;
+    }
+    .calculator {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      max-width: 400px;
+      width: 100%;
+    }
+    .calculator .display {
+      width: 100%;
+      height: 50px;
+      font-size: 1.5rem;
+      border: none;
+      text-align: right;
+      margin-bottom: 15px;
+      padding: 10px;
+      border-radius: 5px;
+      background: #f7f8fa;
+      box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+    .buttons button {
+      padding: 15px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background: #0078d7;
+      color: #ffffff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .buttons button:hover {
+      background: #005bb5;
+    }
+    .buttons button.operator {
+      background: #ff6f61;
+    }
+    .buttons button.operator:hover {
+      background: #d85043;
+    }
+    .buttons button.clear {
+      background: #f0ad4e;
+    }
+    .buttons button.clear:hover {
+      background: #ec9a2c;
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <input type="text" class="display" id="result" disabled>
+    <div class="buttons">
+      <button onclick="clearDisplay()" class="clear">C</button>
+      <button onclick="appendValue('(')">(</button>
+      <button onclick="appendValue(')')">)</button>
+      <button onclick="appendValue('/')" class="operator">/</button>
+      <button onclick="appendValue('7')">7</button>
+      <button onclick="appendValue('8')">8</button>
+      <button onclick="appendValue('9')">9</button>
+      <button onclick="appendValue('*')" class="operator">*</button>
+      <button onclick="appendValue('4')">4</button>
+      <button onclick="appendValue('5')">5</button>
+      <button onclick="appendValue('6')">6</button>
+      <button onclick="appendValue('-')" class="operator">-</button>
+      <button onclick="appendValue('1')">1</button>
+      <button onclick="appendValue('2')">2</button>
+      <button onclick="appendValue('3')">3</button>
+      <button onclick="appendValue('+')" class="operator">+</button>
+      <button onclick="appendValue('0')">0</button>
+      <button onclick="appendValue('.')">.</button>
+      <button onclick="calculate()">=</button>
+      <button onclick="appendValue('Math.sqrt(')" class="operator">√</button>
+      <button onclick="appendValue('Math.pow(')" class="operator">^</button>
+      <button onclick="appendValue('Math.sin(')">sin</button>
+      <button onclick="appendValue('Math.cos(')">cos</button>
+      <button onclick="appendValue('Math.tan(')">tan</button>
+    </div>
+  </div>
+  <script>
+    function clearDisplay() {
+      document.getElementById('result').value = '';
+    }
+
+    function appendValue(value) {
+      document.getElementById('result').value += value;
+    }
+
+    function calculate() {
+      try {
+        const expression = document.getElementById('result').value;
+        const result = eval(expression);
+        document.getElementById('result').value = result;
+      } catch (e) {
+        alert('Invalid Expression');
+        clearDisplay();
+      }
+    }
+  </script>
+</body>
+</html>
