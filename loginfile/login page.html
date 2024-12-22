@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amazon Clone</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #232f3e;
+      color: white;
+      padding: 10px 20px;
+    }
+
+    .navbar .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+    }
+
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .nav-links li a:hover {
+      text-decoration: underline;
+    }
+
+    /* Section Styles */
+    .section {
+      display: none;
+      padding: 50px 20px;
+    }
+
+    /* Display sections based on :target */
+    #landing:target,
+    #login:target,
+    #register:target {
+      display: block;
+    }
+
+    #landing {
+      text-align: center;
+      background-color: #ffd814;
+    }
+
+    #landing h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    #landing button {
+      padding: 10px 20px;
+      background-color: #232f3e;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 1em;
+    }
+
+    #landing button:hover {
+      background-color: #37475a;
+    }
+
+    /* Auth Forms */
+    .auth-container {
+      max-width: 400px;
+      margin: 50px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .auth-container h2 {
+      margin-bottom: 20px;
+      color: #232f3e;
+    }
+
+    .auth-container label {
+      display: block;
+      margin-bottom: 5px;
+      color: #555;
+    }
+
+    .auth-container input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    .auth-container button {
+      width: 100%;
+      padding: 10px;
+      background-color: #232f3e;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .auth-container button:hover {
+      background-color: #37475a;
+    }
+
+    .auth-container p {
+      text-align: center;
+      color: #555;
+    }
+
+    .auth-container p a {
+      color: #232f3e;
+      text-decoration: none;
+    }
+
+    .auth-container p a:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 10px 0;
+      background-color: #232f3e;
+      color: white;
+    }
+
+    /* Default section display */
+    #landing:not(:target),
+    #login:not(:target),
+    #register:not(:target) {
+      display: none;
+    }
+
+    #landing:target,
+    #landing:not(:target):first-of-type {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">Amazon Clone</div>
+      <ul class="nav-links">
+        <li><a href="#landing">Home</a></li>
+        <li><a href="#login">Login</a></li>
+        <li><a href="#register">Register</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Landing Page -->
+  <main>
+    <section id="landing" class="section">
+      <h1>Welcome to Amazon Clone</h1>
+      <p>Shop anything, anytime, anywhere!</p>
+      <a href="#login"><button>Get Started</button></a>
+    </section>
+
+    <!-- Login Page -->
+    <section id="login" class="section">
+      <div class="auth-container">
+        <h2>Login to Amazon Clone</h2>
+        <form action="#">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+          <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="#register">Register here</a></p>
+      </div>
+    </section>
+
+    <!-- Registration Page -->
+    <section id="register" class="section">
+      <div class="auth-container">
+        <h2>Create an Account</h2>
+        <form action="#">
+          <label for="name">Full Name:</label>
+          <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" placeholder="Create a password" required>
+
+          <label for="confirm-password">Confirm Password:</label>
+          <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+
+          <button type="submit">Register</button>
+        </form>
+        <p>Already have an account? <a href="#login">Login here</a></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Amazon Clone. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>

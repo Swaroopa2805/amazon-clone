@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amazon Sign-In</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f3f3;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: #fff;
+      width: 100%;
+      max-width: 350px;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+    }
+
+    /* Logo Section */
+    .logo {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .logo img {
+      width: 100px;
+    }
+
+    /* Sign-In Box */
+    .signin-box h1 {
+      font-size: 24px;
+      font-weight: 400;
+      margin-bottom: 20px;
+    }
+
+    .signin-box label {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 5px;
+      color: #333;
+    }
+
+    .signin-box input {
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+    }
+
+    .signin-btn {
+      width: 100%;
+      padding: 10px;
+      background-color: #f0c14b;
+      border: 1px solid #a88734;
+      border-radius: 3px;
+      font-size: 14px;
+      font-weight: bold;
+      color: #111;
+      cursor: pointer;
+    }
+
+    .signin-btn:hover {
+      background-color: #ddb347;
+    }
+
+    /* Terms Section */
+    .terms {
+      font-size: 12px;
+      color: #555;
+      margin-top: 15px;
+    }
+
+    .terms a {
+      color: #0066c0;
+      text-decoration: none;
+    }
+
+    .terms a:hover {
+      text-decoration: underline;
+    }
+
+    /* Divider Section */
+    .divider {
+      display: flex;
+      align-items: center;
+      margin: 20px 0;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background-color: #ddd;
+    }
+
+    .divider span {
+      padding: 0 10px;
+      font-size: 12px;
+      color: #555;
+    }
+
+    /* Create Account Section */
+    .new-account {
+      text-align: center;
+    }
+
+    .new-account a {
+      font-size: 14px;
+      text-decoration: none;
+      color: #0066c0;
+    }
+
+    .new-account a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Amazon Logo -->
+    <div class="logo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon Logo">
+    </div>
+
+    <!-- Sign-In Form -->
+    <div class="signin-box">
+      <h1>Sign-In</h1>
+      <form action="#" method="post">
+        <!-- Email Input -->
+        <label for="email">Email or mobile phone number</label>
+        <input type="email" id="email" name="email" required>
+
+        <!-- Password Input -->
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+
+        <!-- Submit Button -->
+        <button type="submit" class="signin-btn">Sign-In</button>
+      </form>
+
+      <!-- Terms and Conditions -->
+      <p class="terms">
+        By continuing, you agree to Amazon's <a href="#">Conditions of Use</a> and <a href="#">Privacy Notice</a>.
+      </p>
+    </div>
+
+    <!-- Divider -->
+    <div class="divider">
+      <span>New to Amazon?</span>
+    </div>
+
+    <!-- Create Account -->
+    <div class="new-account">
+      <a href="#">Create your Amazon account</a>
+    </div>
+  </div>
+</body>
+</html>
